@@ -1,0 +1,14 @@
+{% set nb=0 %}
+<ul>
+{% for a in maliste %}
+{% set nb=nb+a.NbBooks %}
+<li>{{ a.id }} - {{a.username | upper }} - 
+<img src="{{asset(a.picture)}}"
+<a href="{{ path('app_details_author',{'id':a.id}) }}">Details</a>
+</li>
+
+{% endfor %}
+</ul>
+Le nombre d'auteurs est : {{ maliste | length}}
+<br>
+Le nombre total de livre est : {{ nb }}
