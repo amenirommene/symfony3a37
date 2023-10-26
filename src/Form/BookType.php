@@ -26,12 +26,12 @@ class BookType extends AbstractType
                 ]
             ])
             ->add('publicationDate')
-            ->add('published')
+          //  ->add('published')
             ->add('author', EntityType::class,[
                 'class'=>Author::class,
                 'choice_label'=>'username'
             ])
-            ->add('Save', SubmitType::class)
+           
         ;
     }
 

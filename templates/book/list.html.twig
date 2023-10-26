@@ -1,6 +1,17 @@
 <ul>
 {% for b in maliste %}
- <li>{{b.ref }} **  {{b.title }} ** {{b.author.username}}</li>
+ <li>{{b.ref }} **  {{b.title }} ** {{b.author.username}}
+ <a href="{{ path('app_edit_book',{'ref':b.ref}) }}">Edit</a>
+ <a href="{{ path('app_delete_book',{'ref':b.ref}) }}">Delete</a>
+ </li>
 
 {% endfor %}
 </ul>
+{% if nbpub is defined %}
+Le nombre de livres publiés: {{nbpub}}
+
+{% endif %}
+<br>
+{% if nbnot is defined %}
+Le nombrede livres non publiés: {{nbnot}}
+{% endif %}
